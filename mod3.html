@@ -1,0 +1,29 @@
+<script>
+
+    var play = prompt("Do you want to play a game?(Y/N)") //Just a lil something I wanted to add to prompt the user if they wanted to play or not.
+
+    if (play === "Y") { //If Y was typed, move on to the for loop. If not, go to else
+
+        var num = parseInt(prompt("Pick a number between 2 and 12")); //Asking the user for a number
+        if (num >= 2 && num <= 12) { //if the user inputed a number between 2 and 12 it will start the game
+
+
+            document.writeln("You picked the number: " + num + "<br>" + "<br>"); //Displaying the number you picked at top of page
+
+            for (c = 0; c < 3; c += 1) { //Choosing 3 rolls with our boolean expression
+                var rand = (Math.floor(Math.random() * 6) + 1) + (Math.floor(Math.random() * 6) + 1); //Random number generator, then adding both of them to get our combined number
+
+                document.writeln("The dice rolled a " + rand + "<br>"); //Displaying what the dice rolled.
+
+                if (num == rand) { // If the number the user inputed equals the random number, then...
+                    document.writeln("You won!" + "<br>"); //...display to the user that they won!
+                    break; //I put a break here to stop the code from completing 3 rolls if the user wins before that.
+                } else
+                    document.writeln("You lost!<br><br>"); //Display if the user lost that specific roll
+            }
+        } else
+            document.writeln("That wasn't a number between 2 and 12... Refresh the page and try again!"); //If the user didn't write a number between 2 and 12 it will ask them to refresh the page and try again.
+    } else
+        document.writeln("Well, you're no fun, Proffessor Johnson! Dont you remember when you used to have fun? If not, this should remind you: " + "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank'>CLICK HERE</a>"); //Displays you are no fun if you chose to answer no to playing the game.
+
+</script>
